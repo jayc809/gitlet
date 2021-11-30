@@ -1,0 +1,25 @@
+> init
+<<<
++ wug.txt wug.txt
++ wug2.txt wug2.txt
++ wug3.txt wug3.txt
+> add wug.txt
+<<<
+> add wug2.txt
+<<<
+> add wug3.txt
+<<<
+> commit "added wug.txt wug2.txt wug3.txt"
+<<<
+= wug.txt wug.txt
++ wug2.txt wug3.txt
+= wug3.txt wug3.txt
+= wug2.txt wug3.txt
+> add wug2.txt
+<<<
+> commit "changed wug2.txt to wug3.txt"
+<<<
++ wug.txt wug3.txt
+> checkout -- wug.txt
+<<<
+= wug.txt wug.txt

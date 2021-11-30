@@ -1,0 +1,26 @@
+> init
+<<<
++ b.txt b.txt
+> add b.txt
+<<<
+> commit "added b.txt"
+<<<
+> rm b.txt
+<<<
+> commit "deleted b.txt"
+<<<
++ b.txt c.txt
+> add b.txt
+<<<
+> commit "added b.txt"
+<<<
+> branch b1
+<<<
++ a.txt a.txt
+> add a.txt
+<<<
+> commit "added a.txt"
+<<<
+> checkout b1
+<<<
+* a.txt

@@ -1,0 +1,55 @@
+> init
+<<<
++ a.txt a.txt
+> add a.txt
+<<<
+> commit "added a.txt"
+<<<
++ a.txt b.txt
+= a.txt b.txt
+> checkout -- a.txt
+<<<
+= a.txt a.txt
++ a.txt b.txt
+> add a.txt
+<<<
+> commit "changed a.txt to b.txt"
+<<<
+# Each ${HEADER} captures its commit UID.
+D UID "[a-f0-9]+"
+D HEADER "commit (${UID})"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+changed a.txt to b.txt
+
+===
+${HEADER}
+${DATE}
+added a.txt
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*
+# UID of second version
+D UID2 "${1}"
+# UID of first version
+D UID1 "${2}"
++ a.txt a.txt
+= a.txt a.txt
+> checkout ${UID2} -- a.txt
+<<<
+= a.txt b.txt
+
+> branch ac
+<<<
++ a.txt c.txt
+> add a.txt
+<<<
+> commit "changed a.txt to c.txt"
+<<<
